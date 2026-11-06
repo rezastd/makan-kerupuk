@@ -12,6 +12,23 @@ python3 -m http.server 8000
 
 No build step. Needs internet (Three.js CDN: `unpkg three@0.160.0` via importmap).
 
+## Realism pass 2
+
+- **Image-based lighting:** sky + sun + earth bounce prefiltered through
+  `PMREMGenerator` into `scene.environment` (real reflections on the
+  kerupuk, glass windows and puddles).
+- **Procedural normal maps:** Sobel-derived normals for the ground, the
+  bamboo frame and the kerupuk itself, so the cracker bubbles and woven
+  lattice are lit relief instead of painted colour.
+- **Shadows:** 2048 PCFSoft with blur radius + normalBias.
+- **Atmosphere:** dusty horizon band, sun bloom, wind gusts, birds,
+  drifting leaves, soft round dust sprites.
+- **Bite realism:** the deeper the cracker is inside the mouth, the bigger
+  the chunk removed (graze vs mouthful); number bibs, hands, ears, nose.
+- **Ambience:** synthesised wind / murmur / cicadas (WebAudio); `M` mutes.
+- **Camera:** handheld micro-sway on the follow cam.
+
+
 ## Files
 
 - `index.html` — scene canvas, HUD (timer/progress/stamina/rank), overlays, touch buttons, importmap
