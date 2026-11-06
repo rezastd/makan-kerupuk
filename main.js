@@ -404,6 +404,7 @@ hold('btn-right', () => swingDir = 1, () => swingDir = 0);
 hold('btn-bite', () => { biteHeld = true; playerBite(); }, () => biteHeld = false);
 setInterval(() => { if (biteHeld && state === 'play') playerBite(); }, 340);
 $('btn-start').addEventListener('click', startGame);
+window.__booted = true;
 $('btn-cam').addEventListener('click', e => {
   followCam = !followCam;
   e.target.textContent = followCam ? 'Kamera: Ikuti / Follow' : 'Kamera: Bebas / Orbit';
