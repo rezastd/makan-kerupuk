@@ -38,3 +38,15 @@ A bite only lands when the cracker is close to your mouth — watch the swing! E
 - **Overlays**: Indonesian + English start/win/results panel with restart
 - **Sound**: WebAudio oscillators (crunch/miss/cheer/sad), no assets
 - **AI**: Budi / Siti / Agus with varied bite speed & damage
+
+## Realism Upgrade
+
+- **Renderer**: ACESFilmic tone mapping (exposure 1.1), sRGB output, PCFSoft shadows.
+- **Sky & environment**: gradient sky dome, drifting low-poly clouds, distant tree/house/tent silhouettes, kampung street with houses, parked motorbike, stalls with fluttering awnings, afternoon shadows.
+- **Ground**: multi-layer procedural canvas texture (base + dirt patches + speckles) with scattered grass tufts, stones, and reflective puddles.
+- **Kerupuk**: lattice bump texture, irregular displaced rim, true pendulum physics (angle + angular velocity; head movement and bites add impulse). Each bite shrinks the disc, rotates the jagged rim, and spawns instanced crumb chips with gravity and floor bounce.
+- **Characters**: articulated head/neck/torso/hip/knee/shoulder pivots, varied skin tones and shirt/shorts colors, eyes, hair or cap, plastic stools, hands behind back, bib cloth, neck-lunge bite animation, torso lean and head bob tied to swing phase and stamina effort.
+- **Lighting & flags**: warm sun + hemisphere + ambient bounce; red-white waving flags use plane geometry with per-vertex sine wave; bunting and stall awnings flutter.
+- **Feedback**: dust bursts on bites, subtle camera shake on impact, confetti on win.
+- **Performance**: shared geometries/materials, capped instanced particle pools (150 crumbs / 120 dust / 120 confetti), reused temp vectors and dummy object — no per-frame allocations in the hot loop.
+- **Frame**: bamboo poles with lashing and procedural bamboo texture replace the plain wooden bar.
