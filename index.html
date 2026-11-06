@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<title>Makan Kerupuk 3D — Simulator 17 Agustus 🇮🇩</title>
+<link rel="stylesheet" href="style.css" />
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+  }
+}
+</script>
+</head>
+<body>
+<div id="app">
+  <canvas id="scene"></canvas>
+
+  <div id="hud" class="hidden">
+    <div class="hud-top">
+      <div class="hud-item">⏱ <span id="hud-timer">60.0</span>s</div>
+      <div class="hud-item">🍘 <span id="hud-progress">100%</span></div>
+      <div class="hud-item stamina">⚡ <div id="stamina-bar"><div id="stamina-fill"></div></div></div>
+      <div class="hud-item">🏁 <span id="hud-rank">#1 / 4</span></div>
+    </div>
+    <div id="racers"></div>
+  </div>
+
+  <div id="hint">Gerakkan mouse / sentuh untuk ayun kepala • SPASI / TAHAN tombol GIGIT saat kerupuk di depan mulut!
+  <br/>Move mouse / touch to swing head • SPACE / HOLD bite button when the cracker is in front of your mouth!</div>
+
+  <div id="touch-controls" class="hidden">
+    <div id="swing-pad">
+      <button id="btn-left" aria-label="Ayun kiri">◀</button>
+      <button id="btn-right" aria-label="Ayun kanan">▶</button>
+    </div>
+    <button id="btn-bite" aria-label="Gigit">😬<br/>GIGIT / BITE</button>
+  </div>
+
+  <div id="overlay">
+    <div class="card">
+      <div class="flags">🇮🇩 🎉 🇮🇩</div>
+      <h1>Lomba Makan Kerupuk</h1>
+      <p class="sub">17 Agustus • Hanging Cracker Eating Simulator</p>
+      <p class="desc">Tangan di belakang! Ayunkan kepala, atur napas (stamina), dan habiskan kerupukmu paling cepat melawan 3 AI.
+      <br/><em>Hands behind your back! Swing your head, manage stamina, finish your cracker first vs 3 AI.</em></p>
+      <div class="rules">🖱 Mouse / 👆 sentuh = ayun kepala &nbsp;•&nbsp; <kbd>SPACE</kbd> / klik-tahan / tombol GIGIT = gigit<br/>Gigitan hanya kena saat kerupuk dekat mulut. Stamina habis = gigitan lemah!</div>
+      <button id="btn-start">MULAI / START</button>
+      <button id="btn-cam" class="ghost">Kamera: Ikuti / Follow</button>
+      <p id="result"></p>
+      <div id="results-table" class="hidden"></div>
+    </div>
+  </div>
+</div>
+<script type="module" src="main.js"></script>
+</body>
+</html>
